@@ -2,13 +2,12 @@
     "name": "ispooya/slugger",
     "description": "this package generates slug from string :)",
     "type": "library",
-    "minimum-stability": "stable",
-    "version": "1.0.2",
+    "license": "MIT",
+    "prefer-stable": true,
     "require": {
         "illuminate/support": "^10.22",
         "php": "^8.1"
     },
-    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Ispooya\\Slugger\\": "src/"
