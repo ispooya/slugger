@@ -4,7 +4,7 @@ namespace Ispooya\Slugger\Services;
 
 class Slugger
 {
-    public function make(string $string, string $separator = '-'): string|null
+    public function make(string|null $string, string $separator = '-'): string|null
     {
         $_transliteration = [
             '/ä|æ|ǽ/' => 'ae',
