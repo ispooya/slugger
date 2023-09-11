@@ -2,9 +2,11 @@
 
 namespace Ispooya\Slugger\Services;
 
+use Illuminate\Database\Eloquent\Model;
+
 class Slugger
 {
-    public function make(string|null $string, string $separator = '-'): string|null
+    public function make(string|null $string, string $separator = '-', Model $model): string|null
     {
         $_transliteration = [
             '/ä|æ|ǽ/' => 'ae',
@@ -67,6 +69,20 @@ class Slugger
         );
         $map = $_transliteration + $merge;
         unset($_transliteration);
-        return preg_replace(array_keys($map), array_values($map), $string);
+
+        $slug = $originalSlug = preg_replace(array_keys($map), array_values($map), $string);
+        $counter = 0;
+
+        while($model->where("slug", $slug)->first() ) {
+            $matches = [];
+            if (preg_match('/-(\d+)$/', $slug, $matches)) {
+                $currentCounter = (int)$matches[1];
+                $slug = str_replace("-$currentCounter", '-' . ++$currentCounter, $slug);
+            } else {
+                $slug .= '-' . ++$counter;
+            }
+        }
+        return $slug;
     }
 }
+
