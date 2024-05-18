@@ -3,9 +3,9 @@
     "description": "this package generates slug from string :)",
     "type": "library",
     "license": "MIT",
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
-    "version": "1.0.2",
+    "version": "1.0.4",
     "require": {
         "illuminate/support": "^11.0",
         "php": "^8.2"
