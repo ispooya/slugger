@@ -1,6 +1,6 @@
 {
     "name": "ispooya/slugger",
-    "description": "this package generates slug from string :)",
+    "description": "A lightweight PHP slug generator supporting Persian (Farsi), Arabic, and Latin-based languages for SEO-friendly URLs",
     "type": "library",
     "license": "MIT",
     "minimum-stability": "stable",
@@ -18,7 +18,7 @@
     "authors": [
         {
             "name": "ispooya",
-            "email": "ispooya@gmail.com"
+            "homepage": "https://github.com/ispooya"
         }
     ],
     "extra": {
